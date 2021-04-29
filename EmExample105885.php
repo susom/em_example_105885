@@ -52,10 +52,12 @@ class EmExample105885 extends \ExternalModules\AbstractExternalModule {
 
 
     public function redcap_save_record( $project_id, $record, $instrument, $event_id, $group_id = NULL, $survey_hash = NULL, $response_id = NULL, $repeat_instance = 1) {
-        $this->ugly_method($record,$instrument,$event_id);
-        // or maybe try this
-
-        $this->better_method($record,$instrument,$event_id);
+        $enableFancy = $this->getProjectSetting('enable-fancy-option');
+        if ($enableFancy) {
+            $this->better_method($record,$instrument,$event_id);
+        } else {
+            $this->ugly_method($record,$instrument,$event_id);
+        }
     }
 
 
