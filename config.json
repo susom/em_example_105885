@@ -37,6 +37,39 @@
 	],
 
 	"project-settings": [
+        {
+            "key": "instances",
+            "name": "<b>Define 1 or more event-form combinations to set a timestamp</b>",
+            "required": true,
+            "type": "sub_settings",
+            "repeatable": true,
+            "sub_settings": [
+                {
+                    "key": "action-logic",
+                    "name": "<b>Action Logic</b><br>If this logic is true, then the following event/field will be set with a current timestamp.  If you only want this to happen when certain forms are saved or in certain events, then use smart-variables [instrument-name] and [event-name].<br><i>e.g.</i> <code>[instrument-name] = 'form_31_interim_health_care_contact'</code>",
+                    "required": true,
+                    "type": "textarea"
+                },
+                {
+                    "key": "dest-field",
+                    "name": "<b>Destination Field</b>",
+                    "required": true,
+                    "type": "field-list"
+                },
+                {
+                    "key": "dest-event",
+                    "name": "<b>Destination Event<br>Leave blank for current event",
+                    "required": false,
+                    "type": "event-list"
+                }
+            ]
+        },
+        {
+            "key": "enable-fancy-option",
+            "name": "<b>Enable Use of Options Above</b>",
+            "required": false,
+            "type": "checkbox"
+        },
 		{
 			"key": "enable-project-debug-logging",
 			"name": "<b>Enable Debug Logging</b><br><i>(optional)</i> Requires installation and configuration of emLogger",
