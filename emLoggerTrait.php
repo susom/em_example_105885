@@ -1,6 +1,6 @@
 <?php
-namespace Stanford\ClassNameHere;
-/** @var ClassNameHere $this */
+namespace Stanford\EmExample105885;
+/** @var EmExample105885 $this */
 
 trait emLoggerTrait
 {
